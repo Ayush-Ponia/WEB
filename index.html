@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheatGuardAI - Emotion & Object Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CheatGuardAI</h1>
+    <p>Upload or drag and drop a photo for emotion and object detection analysis</p>
+    
+    <div id="upload-area" class="upload-area" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
+      <p>Drag & Drop your image here or <span class="upload-btn" onclick="document.getElementById('fileInput').click()">Upload</span></p>
+      <input type="file" id="fileInput" accept="image/*" onchange="fileUploadHandler(event)" hidden>
+    </div>
+
+    <div id="preview-container" class="preview-container">
+      <img id="imagePreview" src="" alt="Preview" />
+      <p id="imageName"></p>
+    </div>
+
+    <button class="submit-btn" onclick="submitImage()">Submit for Analysis</button>
+    
+    <div id="results" class="results">
+      <h2>Results:</h2>
+      <p id="emotionResult">Emotion: Not Detected</p>
+      <p id="cheatingResult">Cheating Behavior: Not Detected</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
